@@ -9,20 +9,26 @@
 
                 <div class="card-body">
                     @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
+                    <div class="alert alert-success" role="alert">
+                        {{ session('status') }}
+                    </div>
                     @endif
-                    <form method="POST" action="{{ route('employe.store') }}">
+                    <form method="post" action="{{ route('employe.store') }}">
+                        {{ csrf_field() }}
                         <div class="form-group">
                             <label for="name">Fullname</label>
-                            <input type="text" name="name" class="form-control" id="name"  placeholder="Enter your Fullname" >
+                            <input type="text" name="name" class="form-control" id="name" placeholder="Enter your Fullname">
                             <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
                         </div>
                         <div class="form-group">
                             <label for="exampleInputEmail1">Email address</label>
-                            <input type="email" class="form-control" id="email"  placeholder="Enter email" name="email">
+                            <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
                             <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Telephone</label>
+                            <input type="number" class="form-control" id="phone" placeholder="Enter phone number" name="phone">
+                            <!-- <small id="phone" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
                         </div>
                         <div class="form-group">
                             <label for="password">Password</label>
@@ -31,7 +37,7 @@
                         <button type="submit" class="btn btn-primary">Submit</button>
                     </form>
 
-            
+
                 </div>
             </div>
         </div>

@@ -2,12 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Employe;
-use App\User;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Hash;
 
-class EmployeController extends Controller
+class ClientController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,8 +13,7 @@ class EmployeController extends Controller
      */
     public function index()
     {
-        $employes = Employe::all();
-        return view('employe.index', compact('employes'));
+        //
     }
 
     /**
@@ -27,8 +23,7 @@ class EmployeController extends Controller
      */
     public function create()
     {
-
-        return view('employe.create');
+        //
     }
 
     /**
@@ -39,14 +34,7 @@ class EmployeController extends Controller
      */
     public function store(Request $request)
     {
-        $employe = new Employe();
-        $employe->name = $request->name;
-        $employe->email = $request->email;
-        $employe->phone = $request->phone;
-        $employe->password = Hash::make($request->Password);
-        $employe->save();
-
-        return redirect()->route('employe.index');
+        //
     }
 
     /**
@@ -57,9 +45,7 @@ class EmployeController extends Controller
      */
     public function show($id)
     {
-        $employe = Employe::findOrFail($id);
-
-        return view('employe.show', compact('employe'));
+        //
     }
 
     /**
